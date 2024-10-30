@@ -12,22 +12,14 @@
  <header>
      <h2 class="exname"> Exercise </h2>
  </header>
- <div class="set&weight">
-    <input type="number" class="set" placeholder="Set">
-    <input type="number" step="0.01" class="weight" placeholder="Weight">
-     <button>
-         <div class="button"> Done </div>
-     </button>
- </div>
- <div class="set&weight">
-     <input type="number" class="set" placeholder="Set">
-     <input type="number" step="0.01" class="weight" placeholder="Weight">
-     <button>
-         <div class="button"> Done </div>
-     </button>
- </div>
+ <div id="newsw"></div>
+ <input type="button" value="new sw" onclick="addSW()">
+
+
  <input type="button" value="Do math" onclick="doMath()">
  <div id="result"></div>
+
+
  <script>
 
      //function doMath = calculate the total weight between all the sets
@@ -47,6 +39,28 @@
          //Return the total product
          document.getElementById('result').innerText = `Total Weight: ${totalProduct}`;
      }
+     //function addSW
+     function addSW(){
+         //create a new element div
+         const newSW = document.createElement('div');
+         //create a new element input
+         const newset = document.createElement("input");
+         //give to the element input type + className + placeHolder
+         newset.type="number";
+         newset.className="set";
+         newset.placeholder="Set"
+         const newweight = document.createElement("input");
+         //give to the element input type + step + className + placeHolder
+         newweight.type="number";
+         newweight.step="0.01";
+         newweight.className="weight";
+         newweight.placeholder="Weight";
+         //append newset and newweight as children
+         newSW.appendChild(newset)
+         newSW.appendChild(newweight)
+         document.getElementById("newsw").appendChild(newSW);
+     }
+
 
 
  </script>
