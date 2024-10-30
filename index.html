@@ -1,1 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
+ <header>
+     <h2 class="exname"> Exercise </h2>
+ </header>
+ <div class="set&weight">
+    <input type="number" class="set" placeholder="Set">
+    <input type="number" step="0.01" class="weight" placeholder="Weight">
+     <button>
+         <div class="button"> Done </div>
+     </button>
+ </div>
+ <div class="set&weight">
+     <input type="number" class="set" placeholder="Set">
+     <input type="number" step="0.01" class="weight" placeholder="Weight">
+     <button>
+         <div class="button"> Done </div>
+     </button>
+ </div>
+ <input type="button" value="Do math" onclick="doMath()">
+ <div id="result"></div>
+ <script>
+
+     //function doMath = calculate the total weight between all the sets
+     function doMath() {
+         //get all the elements in class set
+         const totset = document.getElementsByClassName("set");
+         //get all the elements in class weight
+         const totweight = document.getElementsByClassName("weight");
+         let totalProduct = 0;
+         //parse all the elements in class set and weight as floats
+         for (let i = 0; i < totset.length; i++) {
+             const setValue = parseFloat(totset[i].value) || 0;
+             const weightValue = parseFloat(totweight[i].value) || 0;
+             //total product between everything adding between different sets
+             totalProduct += setValue * weightValue;
+         }
+         //Return the total product
+         document.getElementById('result').innerText = `Total Weight: ${totalProduct}`;
+     }
+
+
+ </script>
+</body>
+</html>
