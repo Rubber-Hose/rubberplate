@@ -6,14 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Exercise</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
  <header>
      <h2 class="exname"> Exercise </h2>
  </header>
- <div id="newsw"></div>
- <input type="button" value="new sw" onclick="addSW()">
+ <div class="sw-container" id="newsw"></div>
+
+ <input class="button-animation-one" type="button" value="+" onclick="addSW()" id="new" >
 
 
  <input type="button" value="Do math" onclick="doMath()">
@@ -43,6 +46,7 @@
      function addSW(){
          //create a new element div
          const newSW = document.createElement('div');
+
          //create a new element input
          const newset = document.createElement("input");
          //give to the element input type + className + placeHolder
@@ -55,11 +59,32 @@
          newweight.step="0.01";
          newweight.className="weight";
          newweight.placeholder="Weight";
+
+         const done = document.createElement("button")
+         done.value = "do Math"
+         done.onclick = doMath();
          //append newset and newweight as children
          newSW.appendChild(newset)
          newSW.appendChild(newweight)
          document.getElementById("newsw").appendChild(newSW);
+
+
      }
+     //adds reset after click on button
+     document.getElementById('new').addEventListener('click', () => {
+         const button = document.getElementById('new');
+
+         // Remove the animation class to reset it
+         button.classList.remove('button-animation-one');
+
+         // Trigger reflow to restart the animation
+         void button.offsetWidth;
+
+         // Add the animation class back
+         button.classList.add('button-animation-one');
+     });
+
+
 
 
 
