@@ -10,21 +10,22 @@
 
 </head>
 <body>
-
- <header>
-     <h2 class="exname"> Exercise </h2>
- </header>
- <div class="sw-container" id="newsw"></div>
-
- <input class="button-animation-one" type="button" value="+" onclick="addSW()" id="new" >
-
-
- <input type="button" value="Do math" onclick="doMath()">
- <div id="result"></div>
-
+<div class="card">
+    <div class="container">
+    <header>
+        <h2 class="exname"> Exercise </h2>
+    </header>
+        <div class="sw-container" id="newsw">
+    </div>
+        <button class="button-animation-one" id="button_new"> + </button>
+    <div id="result"></div>
+    </div>
+</div>
 
  <script>
 
+     const newbutton = document.getElementById('button_new');
+     newbutton.addEventListener('click',addSW)
      //function doMath = calculate the total weight between all the sets
      function doMath() {
          //get all the elements in class set
@@ -40,7 +41,7 @@
              totalProduct += setValue * weightValue;
          }
          //Return the total product
-         document.getElementById('result').innerText = `Total Weight: ${totalProduct}`;
+         document.getElementById('result').innerText = `Total Set Weight: ${totalProduct}`;
      }
      //function addSW
      function addSW(){
@@ -60,12 +61,14 @@
          newweight.className="weight";
          newweight.placeholder="Weight";
 
+
          const done = document.createElement("button")
          done.value = "do Math"
          done.onclick = doMath();
          //append newset and newweight as children
          newSW.appendChild(newset)
          newSW.appendChild(newweight)
+
          document.getElementById("newsw").appendChild(newSW);
 
 
