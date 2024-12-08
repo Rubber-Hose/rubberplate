@@ -1,0 +1,44 @@
+{
+  "exercises": [
+    {
+      "day": "chest",
+      "exercises": [
+        {
+          "name": "chestpress",
+          "sets": [
+            {
+              "number": 1,
+              "weight": 10,
+              "repetitions": 5
+            },
+            {
+              "number": 2,
+              "weight": 5,
+              "repetitions": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": "legs",
+      "exercises": [
+        {
+          "name": "leg press",
+          "sets": [
+            {
+              "number": 1,
+              "weight": 15,
+              "repetitions": 12
+            },
+            {
+              "number": 2,
+              "weight": 20,
+              "repetitions": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
